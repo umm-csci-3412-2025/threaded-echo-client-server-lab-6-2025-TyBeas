@@ -1,8 +1,6 @@
 package echoserver;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -19,6 +17,9 @@ public class EchoServer {
 		ServerSocket serverSocket = new ServerSocket(PORT_NUMBER);
 		while (true) {
 			Socket socket = serverSocket.accept();
+
+			ServerThread serverThread = new ServerThread(socket);
+			serverThread.start();
 
 			// Put your code here.
 			// This should do very little, essentially:

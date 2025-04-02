@@ -18,6 +18,18 @@ public class EchoClient {
 		InputStream socketInputStream = socket.getInputStream();
 		OutputStream socketOutputStream = socket.getOutputStream();
 
+		int inputByte;
+		while ((inputByte = System.in.read()) != -1) {
+			socketOutputStream.write(inputByte);
+		}
+
+		socketOutputStream.flush();
+		socket.shutdownOutput();
+		System.out.write(socketInputStream.readAllBytes());
+
+		socketInputStream.close();
+		socketOutputStream.close();
+		socket.close();
 		// Put your code here.
 	}
 }

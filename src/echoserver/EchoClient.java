@@ -1,9 +1,7 @@
 package echoserver;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
+import java.io.*;
+import java.net.*;
 
 public class EchoClient {
 	public static final int PORT_NUMBER = 6013;

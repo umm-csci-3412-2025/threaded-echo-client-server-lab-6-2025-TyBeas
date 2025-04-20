@@ -7,7 +7,7 @@ import java.net.Socket;
 public class EchoServer {
 	
 	// REPLACE WITH PORT PROVIDED BY THE INSTRUCTOR
-	public static final int PORT_NUMBER = 0; 
+	public static final int PORT_NUMBER = 8080; 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		EchoServer server = new EchoServer();
 		server.start();
@@ -15,6 +15,7 @@ public class EchoServer {
 
 	private void start() throws IOException, InterruptedException {
 		ServerSocket serverSocket = new ServerSocket(PORT_NUMBER);
+
 		while (true) {
 			Socket socket = serverSocket.accept();
 

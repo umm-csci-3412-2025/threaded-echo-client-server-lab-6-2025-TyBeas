@@ -17,9 +17,13 @@ public class ServerThread extends Thread{
 
     public void run(){
         InputStream socketInputStream = null;
-        OutputStream socketOutputStream = null;
+
         InputStreamReader inputStreamReader = null;
+
         BufferedReader bufferedReader = null;
+
+        OutputStream socketOutputStream = null;
+
         PrintWriter printWriter = null;
 
         try {
